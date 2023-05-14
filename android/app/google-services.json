@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "347448175925",
+    "project_id": "notepadapp-e9c52",
+    "storage_bucket": "notepadapp-e9c52.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:347448175925:android:c41952131ed2812f9a707c",
+        "android_client_info": {
+          "package_name": "com.notepadapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "347448175925-7eq1kqecbh9c2ggnh61a8hrnb9uf5c6b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPKjEcA605QHXvMnzmPLqj_NgcYcp4rQM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "347448175925-7eq1kqecbh9c2ggnh61a8hrnb9uf5c6b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
