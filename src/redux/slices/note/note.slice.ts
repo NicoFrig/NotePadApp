@@ -1,12 +1,13 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
-export interface NotesData {
-    title: string;
-    text: string;
+export interface SingleData {
+    id:string,
+    title: string,
+    text: string
 }
 
 export interface NoteReducer {
-    notesData?: NotesData;
+    notesData?: SingleData[];
 }
 
 const initialState: NoteReducer = {
@@ -18,11 +19,14 @@ export const noteSlice = createSlice({
     initialState,
     reducers: {
         getNotesLoading: (state) => state,
-        getNotesSuccess: (state, action:PayloadAction<any>) => ({
+        getNotesSuccess: (state, action:PayloadAction<SingleData[]>) => ({
             ...state,
             notesData: action.payload,
         }),
         getNotesError: (state) => state,
+
+        setNotesLoading:(state,action:PayloadAction<SingleData>) => state,
+        setNotesError:(state) => state,
     },
 });
 

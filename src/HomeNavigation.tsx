@@ -5,14 +5,14 @@ import CardDetail from "./CardDetail";
 
 export type HomeNavigationParams = {
     CardNote: undefined;
-    CardDetail: undefined;
+    CardDetail: {index:number};
 };
 
 const Stack = createStackNavigator<HomeNavigationParams>();
 
 const HomeNavigation = () => {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{headerShown:false}}>
             <Stack.Screen name="CardNote" component={CardNote} />
             <Stack.Screen name="CardDetail" component={CardDetail} />
         </Stack.Navigator>
