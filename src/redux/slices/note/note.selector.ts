@@ -2,7 +2,7 @@ import {ReduxState} from '../../store/reduxStore';
 import {createSelector} from '@reduxjs/toolkit';
 
 interface NotesSelectorParams {
-    index:number
+    index?:number
 }
 
 export const selectAllNotes = (state: ReduxState) => state.notes.notesData;
@@ -20,7 +20,7 @@ export const loadedNotes = createSelector(
 export const singleNoteByIndex = createSelector(
     [selectAllNotes, selectIndex],
     (notes, index) => {
-        if (!notes) {return;}
+        if (!notes || index === undefined) {return;}
         return notes[index];
     }
 );

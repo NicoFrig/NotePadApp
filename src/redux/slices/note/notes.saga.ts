@@ -1,7 +1,6 @@
 import {call, put, takeLeading} from 'typed-redux-saga';
-import {getNotes, setNotes} from '../../../utils/firebaseCalls';
+import {addNotes, getNotes, setNotes} from '../../../utils/firebaseCalls';
 import {noteActions, SingleData} from './note.slice';
-import {all} from 'redux-saga/effects';
 
 function* getNotesFromFirebase() {
     const allNotes = yield* call(getNotes);
@@ -14,8 +13,16 @@ function* getNotesFromFirebase() {
 function* setNoteToFirebase({payload}: {payload:SingleData}) {
     yield* call(setNotes, payload);
 }
+
+function* addNoteToFirebase({payload}: {payload:SingleData}){
+    yield* call(addNotes, payload);
+}
 export default function* notesSaga() {
     yield* takeLeading(noteActions.getNotesLoading, getNotesFromFirebase);
+
     yield* takeLeading(noteActions.setNotesLoading, setNoteToFirebase);
+    yield* takeLeading(noteActions.addNotesLoading, addNoteToFirebase);
+
     yield* takeLeading(noteActions.setNotesLoading, getNotesFromFirebase);
+    yield* takeLeading(noteActions.addNotesLoading, getNotesFromFirebase);
 }

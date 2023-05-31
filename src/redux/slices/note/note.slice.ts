@@ -1,7 +1,7 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 export interface SingleData {
-    id:string,
+    id?:string,
     title: string,
     text: string
 }
@@ -27,6 +27,9 @@ export const noteSlice = createSlice({
 
         setNotesLoading:(state,action:PayloadAction<SingleData>) => state,
         setNotesError:(state) => state,
+
+        addNotesLoading:(state, action:PayloadAction<SingleData>) => state,
+        addNotesError:(state) => state,
     },
 });
 

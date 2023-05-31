@@ -8,15 +8,11 @@ import {Provider} from "react-redux";
 import {reduxStore} from "./redux/store/reduxStore";
 const App = () => {
     const isDarkMode = useColorScheme() === 'dark';
-    const backgroundStyle = {
-        backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-    };
     return (
         <Provider store={reduxStore}>
-            <SafeAreaView style={[backgroundStyle, {flex: 1}]}>
+            <SafeAreaView style={{flex: 1, backgroundColor:'white'}}>
                 <StatusBar
                     barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-                    backgroundColor={backgroundStyle.backgroundColor}
                 />
                 <NavigationContainer>
                     <HomeNavigation />

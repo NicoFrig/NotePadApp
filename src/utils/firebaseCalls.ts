@@ -9,3 +9,7 @@ export async function getNotes ()  {
 export async function setNotes (note:SingleData) {
     await firestore().collection('allNotes').doc(note.id).set({title:note.title, text:note.text});
 }
+
+export async function addNotes (note:SingleData) {
+    await firestore().collection('allNotes').add({title:note.title, text:note.text});
+}
